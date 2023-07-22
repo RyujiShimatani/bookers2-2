@@ -2,31 +2,55 @@
 <html>
   <head>
     <title>Bookers2</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <script src="https://kit.fontawesome.com/e2e175b78f.js" crossorigin="anonymous"></script>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <header>
-      <% if user_signed_in? %>
-      <li>
-        <%= link_to '投稿フォーム', new_book_path %>
-      </li>
-      <li>
-        <%= link_to "ログアウト" , destroy_user_session_path, method: :delete %>
-      </li>
-      <% else %>
-      <li>
-        <%= link_to "新規登録" , new_user_registration_path %>
-      </li>
-      <li>
-        <%= link_to "ログイン", new_user_session_path %>
-      </li>
-      <% end %>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <div class="row">
+            <a class="navbar-brand" href="/">
+              <span>Bookers</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse ms-auto" id="navbarNav">
+              <ul class="navbar-nav ">
+                <li class="nav-item active">
+                <% if user_signed_in? %>
+                <li>
+                <%= link_to '投稿フォーム', new_book_path %>
+                </li>
+                <li>
+                  <%= link_to "ログアウト" , destroy_user_session_path, method: :delete %>
+                </li>
+                <% else %>
+                <li>
+                  <%= link_to "Home" , root_path %>
+                </li>
+                <li>
+                  <%= link_to "About" , about_path %>
+                </li>
+                <li>
+                  <%= link_to "新規登録" , new_user_registration_path %>
+                </li>
+                <li>
+                  <%= link_to "ログイン", new_user_session_path %>
+                </li>
+                <% end %>
+
+              </ul>
+          </div>
+      </div>
+    </nav>
     </header>
     <%= yield %>
   </body>
