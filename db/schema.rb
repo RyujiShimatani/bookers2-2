@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(version: 2023_07_22_100449) do
     t.integer "user_id"
     t.string "title"
     t.string "body"
-    t.integer "profile_image_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -57,8 +56,6 @@ ActiveRecord::Schema.define(version: 2023_07_22_100449) do
     t.datetime "remember_created_at"
     t.string "name"
     t.text "introduction"
-    t.string "profile_image"
-    t.string "profile_image_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true

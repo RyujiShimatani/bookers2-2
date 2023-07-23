@@ -5,6 +5,7 @@
 <% @users.each do |user| %>
   <p>User名</p>
   <span><%= user.name %></span>
+
 <% end %>
 
-
+<%= link_to "Show" , @user_path %>
