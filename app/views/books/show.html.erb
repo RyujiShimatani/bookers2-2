@@ -7,6 +7,6 @@
 <h2>感想</h2>
 <p><%= @book.body %></p>
 <% if @book.user_id == current_user.id %>
-    <%= link_to "編集", edit_book_path(@book.id) %>
-    <%= link_to "削除", book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+  <%= link_to "編集", edit_book_path(@book.id) %>
+  <%= link_to "削除", book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
 <% end %>
