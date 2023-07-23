@@ -1,5 +1,10 @@
+<%= render 'users/user' , user:@user %>
+<%= render 'books/book' , book:@book %>
+
 <h1>Users一覧</h1>
 <% @users.each do |user| %>
   <p>User名</p>
   <span><%= user.name %></span>
 <% end %>
+
+
