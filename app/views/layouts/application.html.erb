@@ -18,6 +18,7 @@
           <div class="row">
             <a class="navbar-brand" href="/">
               <span>Bookers</span>
+            </a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -47,8 +48,10 @@
                 </li>
                 <% else %>
                 <li>
-                  <a class="nav-link text-light">
-                    <%= link_to "Home" , root_path %>
+                  <a class="nav-link text-light" herf="/users/">
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                
+                    Home
                   </a>
                 </li>
                 <li>
@@ -74,5 +77,16 @@
     </nav>
     </header>
     <%= yield %>
+    <footer>
+      <div class="container mt-5">
+        <div class="row">
+          <div class="mx-auto">
+
+            <p>CopyRight Infratop.inc</p>
+
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
