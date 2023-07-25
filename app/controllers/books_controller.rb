@@ -40,8 +40,6 @@ class BooksController < ApplicationController
     else
       render :edit
     end
-    
-    redirect_to book_path(@book.id)
   end
 
   def destroy
