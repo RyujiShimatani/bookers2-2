@@ -27,57 +27,62 @@
                 <li class="nav-item active">
                 <% if user_signed_in? %>
                 <li>
-                  <a class="nav-link text-light">
-                    <%= link_to 'Home', user_path(current_user.id) %>
-                  </a>
+                  <%= link_to user_path(current_user.id), class:"nav-link text-light" do %>
+                    <i class="fas fa-home"aria-hidden="true"></i>
+                    Home
+                  <% end %>
                 </li>
                 <li>
-                  <a class="nav-link text-light">
-                    <%= link_to 'Users', users_path %>
-                  </a>
+                  <%= link_to users_path, class:"nav-link text-light" do %>
+                    <i class="fas fa-users"aria-hidden="true"></i>
+                    Users
+                    <% end %>
                 </li>
                 <li>
-                  <a class="nav-link text-light">
-                    <%= link_to 'Books', books_path %>
-                  </a>
+                  <%= link_to books_path, class:"nav-link text-light" do %>
+                    <i class="fa-book-open"aria-hidden="true"></i>
+                    Books
+                  <% end %>
                 </li>
                 <li>
-                  <a class="nav-link text-light">
-                    <%= link_to "ログアウト" , destroy_user_session_path, method: :delete %>
-                  </a>
+                  <%= link_to destroy_user_session_path, class:"nav-link text-light", method: :delete do %>
+                    <i class="fas fa-sign-out-alt"aria-hidden="true"></i>
+                    Log out
+                  <% end %>
                 </li>
                 <% else %>
                 <li>
-                  <a class="nav-link text-light" herf="/users/">
+                  <%= link_to "/", class:"nav-link text-light" do %>
                     <i class="fas fa-home" aria-hidden="true"></i>
-                
                     Home
-                  </a>
+                  <% end %>
                 </li>
                 <li>
-                  <a class="nav-link text-light">
-                    <i class="fas fa-users" aria-hidden="true"></i>
-                    <%= link_to "About" , about_path %>
-                  </a>
+                  <%= link_to home_about_path, class:"nav-link text-light" do %>
+                    <i class="fas fa-link" aria-hidden="true"></i>
+                    About
+                  <% end %>
                 </li>
                 <li>
-                  <a class="nav-link text-light">
+                  <%= link_to new_user_registration_path, class:"nav-link text-light" do %>
                     <i class="fas fa-book-open"aria-hidden="true"></i>
-                    <%= link_to "新規登録" , new_user_registration_path %>
-                  </a>
+                    Sign up
+                  <% end %>
                 </li>
                 <li>
-                  <a class="nav-link text-light">
+                  <%= link_to new_user_session_path, class:"nav-link text-light" do %>
                     <i class="fas fa-sign-in-alt"aria-hidden="true"></i>
-                    <%= link_to "ログイン", new_user_session_path %>
-                  </a>
+                    Log in
+                  <% end %>
                 </li>
                 <% end %>
-
               </ul>
           </div>
       </div>
     </nav>
+    <div>
+    <%= flash[:notice] %>
+    </div>
     </header>
     <%= yield %>
     <footer>
